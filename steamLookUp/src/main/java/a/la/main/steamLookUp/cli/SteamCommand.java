@@ -1,6 +1,7 @@
 package a.la.main.steamLookUp.cli;
 
 import a.la.main.steamLookUp.client.SteamApiClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tools.jackson.databind.JsonNode;
@@ -13,7 +14,8 @@ public class SteamCommand implements CommandLineRunner {
 
     private final SteamApiClient steamApiClient;
 
-    private String key = "C4EB6E61AB3EA8C1AD0211E26263C92F";
+    @Value("${env.key}")
+    private String key;
 
     public SteamCommand(SteamApiClient steamApiClient, JsonMapper jsonMapper) {
         this.steamApiClient = steamApiClient;

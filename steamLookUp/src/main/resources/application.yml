@@ -1,3 +1,5 @@
 spring:
   application:
     name: steamLookUp
+env:
+  key: ${STEAM_KEY}
