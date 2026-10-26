@@ -15,7 +15,7 @@ public class SteamApiClient {
     private final HttpClient httpClient = HttpClient.newHttpClient();
 
     public String getPlayerSummaries(String key, String steamids) throws IOException, InterruptedException {
-        String url ="http://partner.steam-api.com/ISteamUser/GetPlayerSummaries/v2/?key="+key+"&steamids="+steamids;
+        String url ="https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key="+key+"&steamids="+steamids;
 
 
         HttpRequest request = HttpRequest
