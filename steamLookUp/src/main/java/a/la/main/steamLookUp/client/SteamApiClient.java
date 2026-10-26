@@ -31,4 +31,21 @@ public class SteamApiClient {
         return response.body();
     }
 
+    public String resolveVanityUrl(String key , String vanityUrl) throws IOException, InterruptedException {
+        String url ="https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/?key="+key+"&vanityUrl="+vanityUrl;
+
+
+        HttpRequest request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(url))
+                .GET()
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request,
+                HttpResponse.BodyHandlers.ofString()
+        );
+
+        return response.body();
+    }
+
 }
